@@ -73,14 +73,17 @@ h1 {
   transform: scale(1.02);
 }
 
-/* ========== DEFAULT AVATAR OVERLAY ========== */
-/* UPDATED: Overlays at max-width: 60% so it's smaller over the ring */
+/* 
+   ========== DEFAULT AVATAR OVERLAY ==========
+   Increased 'max-width' to 80% so it appears bigger over the ring 
+   while still staying centered.
+*/
 .default-avatar {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-width: 60%; /* UPDATED */
+  max-width: 80%; /* <-- KEY CHANGE: bigger so it fills more of the ring */
   height: auto;
   opacity: 0;          /* hidden until hover */
   transition: opacity 0.3s;
@@ -89,7 +92,6 @@ h1 {
 }
 
 /* ========== DOWNLOAD LINK (TEXT) ========== */
-/* UPDATED: Replacing the old .download-btn with a plain text link */
 .download-link {
   position: absolute;
   bottom: 10px;
@@ -103,7 +105,7 @@ h1 {
   z-index: 3;          /* ensure on top of avatar */
 }
 
-/* UPDATED: Hover to show both .default-avatar and .download-link */
+/* Hover shows the default avatar & link */
 .decoration-cell:hover .default-avatar,
 .decoration-cell:hover .download-link {
   opacity: 1;
