@@ -16,54 +16,51 @@
   <!-- ====== MAIN CONTENT ====== -->
   <main id="categories-container">
 
-    <!-- ====== CATEGORY #1 ====== -->
+    <!-- ====== CATEGORY EXAMPLE ====== -->
     <section class="category">
       <!-- Banner Section -->
       <div class="category-banner">
-        <!-- Replace with your own banner image -->
-        <img src="images/banner.png" alt="Sample Banner" />
+        <!-- Replace with your actual banner image -->
+        <img src="images/banner-placeholder.jpg" alt="Sample Banner" />
       </div>
 
       <!-- Grid of Decorations -->
       <div class="decorations-grid">
         <!-- Single Decoration Cell -->
         <div class="decoration-cell">
-          <img 
+          <!-- The main decoration image -->
+          <img
             class="decoration-img"
             src="images/decoration1.png"
-            alt="Decoration" 
+            alt="Test Decoration"
           />
-        
-          <!-- Remove 'hidden' from here so we can test if it shows up at all -->
+
+          <!-- Default avatar overlay (hover to reveal) -->
           <img
             class="default-avatar"
             src="images/default-avatar.png"
             alt="Default Avatar Preview"
           />
-        
-          <a 
-            class="download-btn hidden"
+
+          <!-- Simple text link for download, appears on hover -->
+          <a
+            class="download-link"
             href="images/decoration1.png"
             download
           >
-            Download
+            Click to download
           </a>
         </div>
-        
+        <!-- End of .decoration-cell -->
 
         <!-- 
-          You can add more .decoration-cell blocks here if you want more decorations
-          for this same category. Just copy/paste the block above and change file paths.
+          Add more .decoration-cell blocks here for additional decorations,
+          or create more <section class="category"> blocks for additional categories
         -->
-      </div><!-- end decorations-grid -->
-    </section><!-- end category -->
-
-    <!--
-      You can add more categories the same way:
-      <section class="category">
-        ...
-      </section>
-    -->
+      </div>
+      <!-- End .decorations-grid -->
+    </section>
+    <!-- End .category -->
 
   </main><!-- end main -->
 
