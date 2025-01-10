@@ -91,13 +91,15 @@ h1 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-width: 80%;   /* stays within the cell */
+  /* Control the size here — for example, 60% of the parent cell */
+  max-width: 60%; 
   height: auto;
-  opacity: 0;       /* hidden by default */
+  opacity: 0;              /* hidden by default (via hover effect below) */
   transition: opacity 0.3s;
-  pointer-events: none; /* clicks “pass through” */
-  z-index: 2;       /* above the decoration image */
+  pointer-events: none;
+  z-index: 2;             /* above decoration */
 }
+
 
 .hidden {
   display: none !important;
