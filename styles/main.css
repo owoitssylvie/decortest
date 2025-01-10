@@ -1,4 +1,4 @@
-/* ========== GLOBAL RESETS ========== */
+/* ========== GLOBAL RESETS & BASE STYLES ========== */
 * {
   box-sizing: border-box;
 }
@@ -21,7 +21,7 @@ h1 {
   font-weight: 400;
 }
 
-/* ========== CATEGORY & BANNER ========== */
+/* ========== BANNER / CATEGORY ========== */
 .category {
   margin: 2rem 0;
 }
@@ -30,26 +30,37 @@ h1 {
   display: block;
   width: 100%;
   height: auto;
-  max-height: 400px; /* optional: limit banner height */
-  object-fit: cover; /* helps crop if banner is wide/tall */
+  max-height: 400px;
+  object-fit: cover;
 }
 
-/* ========== GRID & DECORATION CELLS ========== */
+/* 
+   ========== DECORATIONS GRID ==========
+   We can set each cell to 250px wide.
+   repeat(auto-fit, 250px) will create columns of 250px each.
+*/
 .decorations-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, 250px);
   gap: 1rem;
   padding: 1rem;
+  justify-content: center;  /* centers the columns if there's extra space */
 }
 
+/* 
+   ========== DECORATION CELL ==========
+   Forced 250×250 so we can absolutely position the images.
+*/
 .decoration-cell {
+  width: 250px;
+  height: 250px;
   position: relative;
-  text-align: center;
-  cursor: pointer;
+  margin: 0 auto;
   background-color: #2b2b2b;
   border-radius: 4px;
   overflow: hidden;
-  padding: 0.5rem;
+  text-align: center;
+  cursor: pointer;
   transition: background-color 0.2s;
 }
 
@@ -57,16 +68,22 @@ h1 {
   background-color: #363636;
 }
 
-/* The main decoration image */
+/* 
+   ========== JELLYFISH RING (decoration-img) ==========
+   Absolutely positioned to fill the 250×250 cell.
+   object-fit: contain => keeps aspect ratio inside the cell.
+*/
 .decoration-img {
-  display: block;
-  margin: 0 auto;
-  max-width: 200px; /* ensures it won't get too large */
-  width: 100%;
-  height: auto;
-  border: 2px solid #444;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;     /* fill the cell’s width */
+  height: 100%;    /* fill the cell’s height */
+  object-fit: contain;
+  border: 2px solid #444;  /* optional border */
   border-radius: 4px;
   transition: transform 0.2s;
+  z-index: 1;      /* behind the avatar (we want the ring behind the logo) */
 }
 
 .decoration-cell:hover .decoration-img {
@@ -74,24 +91,37 @@ h1 {
 }
 
 /* 
-   ========== DEFAULT AVATAR OVERLAY ==========
-   Increased 'max-width' to 80% so it appears bigger over the ring 
-   while still staying centered.
+   ========== DEFAULT AVATAR (Discord Logo) ==========
+   Also absolutely positioned + centered on top with z-index:2.
+   width: 80% means 80% of the cell’s width => ~200px if the cell is 250px.
+   Tweak as needed to fill more/less of the ring.
 */
 .default-avatar {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-width: 80%; /* <-- KEY CHANGE: bigger so it fills more of the ring */
+  width: 80%;
   height: auto;
-  opacity: 0;          /* hidden until hover */
+  opacity: 0;                  /* hidden until hover */
   transition: opacity 0.3s;
   pointer-events: none;
-  z-index: 2;          /* above the decoration image */
+  z-index: 2;
 }
 
-/* ========== DOWNLOAD LINK (TEXT) ========== */
+/* 
+   ========== HOVER EFFECTS ==========
+   On hover, show the default avatar and the download link text 
+*/
+.decoration-cell:hover .default-avatar,
+.decoration-cell:hover .download-link {
+  opacity: 1;
+}
+
+/* 
+   ========== DOWNLOAD LINK (TEXT) ==========
+   Centered horizontally near the bottom. Hidden by default.
+*/
 .download-link {
   position: absolute;
   bottom: 10px;
@@ -100,13 +130,7 @@ h1 {
   color: #fff;
   text-decoration: underline;
   font-weight: 500;
-  opacity: 0;          /* hidden until hover */
+  opacity: 0;
   transition: opacity 0.3s;
-  z-index: 3;          /* ensure on top of avatar */
-}
-
-/* Hover shows the default avatar & link */
-.decoration-cell:hover .default-avatar,
-.decoration-cell:hover .download-link {
-  opacity: 1;
+  z-index: 3;  /* above avatar/ring */
 }
