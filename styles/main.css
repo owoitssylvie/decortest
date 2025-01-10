@@ -1,3 +1,9 @@
+/* ========== GLOBAL STYLES ========== */
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: sans-serif;
@@ -5,57 +11,100 @@ body {
   color: #fff;
 }
 
+/* A little padding around the header content */
 header {
   text-align: center;
   padding: 1rem;
+  background-color: #2b2b2b; /* Slightly darker than body */
 }
+
+h1 {
+  margin: 0;
+  font-weight: 400;
+}
+
+/* ========== CATEGORY/BANNER SECTION ========== */
 
 .category {
   margin: 2rem 0;
 }
 
-/* Banner styling */
 .category-banner img {
   display: block;
   width: 100%;
   height: auto;
+  max-height: 400px; /* optional: limits banner height */
+  object-fit: cover; /* if you have very wide banners, this helps */
 }
 
-/* Grid styling */
+/* ========== GRID & DECORATION CELLS ========== */
+
 .decorations-grid {
+  /* 
+     Use auto-fit or auto-fill for responsive behavior.
+     minmax(150px, 1fr) means each cell is at least 150px wide
+     but expands up to the available space in the row.
+  */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1rem;
   padding: 1rem;
 }
 
-/* Each decoration cell */
+/* Each cell is a container for the decoration + overlays + button */
 .decoration-cell {
-  position: relative; 
+  position: relative;
   text-align: center;
   cursor: pointer;
+  background-color: #2b2b2b; /* optional: slight contrast background */
+  border-radius: 4px;       /* optional: round corners */
+  overflow: hidden;         /* ensures child elements don’t spill out */
+  padding: 0.5rem;          /* some internal spacing */
+  transition: background-color 0.2s;
 }
 
+.decoration-cell:hover {
+  background-color: #363636;
+}
+
+/* The main decoration image */
 .decoration-img {
-  width: 100%;
+  display: block;
+  margin: 0 auto;
+  max-width: 200px; /* keep it from getting too big */
+  width: 100%;      /* fill the cell’s width, up to the max-width limit */
   height: auto;
   border: 2px solid #444;
+  border-radius: 4px; /* optional: round corners on the decoration */
+  transition: transform 0.2s;
 }
 
-/* Default avatar overlay */
+/* Zoom slightly on hover */
+.decoration-cell:hover .decoration-img {
+  transform: scale(1.02);
+}
+
+/* ========== DEFAULT AVATAR OVERLAY ========== */
+
 .default-avatar {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 80%;
+  max-width: 80%;   /* stays within the cell */
   height: auto;
-  opacity: 0;
+  opacity: 0;       /* hidden by default */
   transition: opacity 0.3s;
-  pointer-events: none;
+  pointer-events: none; /* clicks “pass through” */
+  z-index: 2;       /* above the decoration image */
 }
 
-/* Download button */
+.hidden {
+  display: none !important;
+}
+
+/* ========== DOWNLOAD BUTTON ========== */
+
 .download-btn {
   position: absolute;
   bottom: 10px;
@@ -63,19 +112,40 @@ header {
   transform: translateX(-50%);
   background: #007bff;
   color: #fff;
-  padding: 0.3rem 0.6rem;
   text-decoration: none;
+  padding: 0.4rem 0.8rem;
   border-radius: 4px;
-  opacity: 0;
-  transition: opacity 0.3s;
+  opacity: 0;       /* hidden by default */
+  transition: opacity 0.3s, background 0.3s;
+  z-index: 3;       /* ensure on top of the avatar overlay too */
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
-/* Show on hover */
+/* Button hover style */
+.download-btn:hover {
+  background: #005ec2;
+}
+
+/* ========== HOVER SHOWS AVATAR & BUTTON ========== */
+
+/* 
+   .decoration-cell:hover .default-avatar,
+   .decoration-cell:hover .download-btn {
+     opacity: 1;
+   }
+   If you want them always on hover, uncomment the below block. 
+   Or rely on click toggling in your JavaScript instead.
+*/
+
+/*
 .decoration-cell:hover .default-avatar,
 .decoration-cell:hover .download-btn {
   opacity: 1;
 }
+*/
 
-.hidden {
-  display: none !important;
-}
+/* 
+   If you’re using your JavaScript to toggle .hidden class on click, 
+   that can override the hover logic. So pick one approach (hover or click).
+*/
