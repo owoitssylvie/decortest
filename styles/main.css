@@ -138,12 +138,12 @@ h1 {
    Or rely on click toggling in your JavaScript instead.
 */
 
-/*
+
 .decoration-cell:hover .default-avatar,
 .decoration-cell:hover .download-btn {
   opacity: 1;
 }
-*/
+
 
 /* 
    If you’re using your JavaScript to toggle .hidden class on click, 
