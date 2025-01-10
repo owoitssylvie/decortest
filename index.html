@@ -3,49 +3,72 @@
 <head>
   <meta charset="UTF-8" />
   <title>Avatar Decorations</title>
+  <!-- Link to your main stylesheet -->
   <link rel="stylesheet" href="styles/main.css" />
 </head>
 <body>
+
+  <!-- ====== HEADER ====== -->
   <header>
     <h1>Avatar Decorations</h1>
   </header>
 
+  <!-- ====== MAIN CONTENT ====== -->
   <main id="categories-container">
-  <section class="category">
-    <div class="category-banner">
-      <img src="images/banner.png" alt="Sample Banner">
-    </div>
 
-    <div class="decorations-grid">
-      <!-- First Decoration -->
-      <div class="decoration-cell">
-        <img
-          class="decoration-img"
-          src="images/decoration1.png"
-          alt="Test Decoration"
-        />
-
-        <!-- The default avatar overlay (hidden until hover) -->
-        <img
-          class="default-avatar hidden"
-          src="images/default-avatar.png"
-          alt="Default avatar preview"
-        />
-
-        <!-- The download button (hidden until hover or click) -->
-        <a
-          class="download-btn hidden"
-          href="images/decoration1.png"
-          download
-        >
-          Download
-        </a>
+    <!-- ====== CATEGORY #1 ====== -->
+    <section class="category">
+      <!-- Banner Section -->
+      <div class="category-banner">
+        <!-- Replace with your own banner image -->
+        <img src="images/banner.png" alt="Sample Banner" />
       </div>
-    </div>
-  </section>
-</main>
 
+      <!-- Grid of Decorations -->
+      <div class="decorations-grid">
+        <!-- Single Decoration Cell -->
+        <div class="decoration-cell">
+          <!-- The decoration image -->
+          <img
+            class="decoration-img"
+            src="images/decoration1.png"
+            alt="Test Decoration"
+          />
 
+          <!-- Default avatar overlay (hidden by default) -->
+          <img
+            class="default-avatar hidden"
+            src="images/default-avatar.png"
+            alt="Default avatar preview"
+          />
+
+          <!-- Download button (hidden by default) -->
+          <a
+            class="download-btn hidden"
+            href="images/decoration1.png"
+            download
+          >
+            Download
+          </a>
+        </div><!-- end decoration-cell -->
+
+        <!-- 
+          You can add more .decoration-cell blocks here if you want more decorations
+          for this same category. Just copy/paste the block above and change file paths.
+        -->
+      </div><!-- end decorations-grid -->
+    </section><!-- end category -->
+
+    <!--
+      You can add more categories the same way:
+      <section class="category">
+        ...
+      </section>
+    -->
+
+  </main><!-- end main -->
+
+  <!-- ====== SCRIPTS ====== -->
   <script src="scripts/main.js"></script>
 </body>
 </html>
