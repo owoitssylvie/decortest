@@ -33,12 +33,18 @@ h1 {
 */
 .category-banner img {
   display: block;
-  max-width: 1000px; /* you can adjust this to 800px, etc. */
-  width: 100%;       /* ensures responsiveness up to max-width */
+  /* Option A: bigger fixed max-width */
+  /* max-width: 1200px; */
+
+  /* Option B: use viewport width (comment out if you prefer a fixed px value) */
+  max-width: 80vw;
+
+  width: 100%;
   height: auto;
   object-fit: cover;
-  margin: 0 auto;    /* centers horizontally */
+  margin: 0 auto;
 }
+
 
 /* 
    ========== DECORATIONS GRID ==========
