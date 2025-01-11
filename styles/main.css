@@ -34,16 +34,17 @@ h1 {
   object-fit: cover;
 }
 
+/* ========== DECORATIONS GRID ========== */
 /* 
-   ========== DECORATIONS GRID ==========
    Each cell is 250×250 for consistent sizing.
+   Adjust to 300×300 or any dimension you prefer.
 */
 .decorations-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, 250px);
   gap: 1rem;
   padding: 1rem;
-  justify-content: center;  /* centers columns if there's extra space */
+  justify-content: center; /* centers columns if there's extra space */
 }
 
 /* 
@@ -59,7 +60,7 @@ h1 {
   border-radius: 4px;
   overflow: hidden;
   text-align: center;
-  cursor: pointer;
+  cursor: pointer;           /* entire cell is clickable */
   transition: background-color 0.2s;
 }
 
@@ -81,11 +82,11 @@ h1 {
   opacity: 0;               /* hidden until hover */
   transition: opacity 0.3s;
   pointer-events: none;
-  z-index: 1;               /* LOWER than decoration-img */
+  z-index: 1;               /* behind the decoration */
 }
 
 /* 
-   ========== JELLYFISH RING (OR ANY DECORATION) ON TOP ==========
+   ========== DECORATION IMAGE (RING) ON TOP ==========
    Higher z-index so it appears in front of the avatar.
 */
 .decoration-img {
@@ -94,11 +95,11 @@ h1 {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  border: 2px solid #444;   /* optional border */
+  object-fit: contain;       /* keeps ring aspect ratio */
+  border: 2px solid #444;    /* optional border */
   border-radius: 4px;
   transition: transform 0.2s;
-  z-index: 2;               /* HIGHER than .default-avatar */
+  z-index: 2;
 }
 
 .decoration-cell:hover .decoration-img {
@@ -106,27 +107,23 @@ h1 {
 }
 
 /* 
-   ========== DOWNLOAD LINK (TEXT) ==========
-   Centered horizontally near the bottom. Hidden by default.
+   ========== DOWNLOAD INFO (TEXT BELOW CELL) ==========
+   Not absolutely positioned; appears underneath the cell.
+   We can style it to stand out or remain simple.
 */
-.download-link {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+.download-info {
+  text-align: center;
   color: #fff;
-  text-decoration: underline;
-  font-weight: 500;
-  opacity: 0;
-  transition: opacity 0.3s;
-  z-index: 3;               /* on top of both images */
+  margin-top: 6px;   /* space above text */
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  opacity: 0.8;      /* optional slight transparency */
 }
 
 /* 
-   ========== HOVER EFFECTS ==========
-   Show the avatar and link text on hover.
+   ========== HOVER EFFECT FOR DEFAULT AVATAR ==========
+   Appear on hover. No link needed here since the entire cell is clickable via JS.
 */
-.decoration-cell:hover .default-avatar,
-.decoration-cell:hover .download-link {
+.decoration-cell:hover .default-avatar {
   opacity: 1;
 }
