@@ -25,54 +25,64 @@
       <!-- Grid of Decorations -->
       <div class="decorations-grid">
 
-        <!-- ====== DECORATION CELL #1 ====== -->
-        <div 
-          class="decoration-cell" 
-          data-image="images/decoration1.png"
-        >
-          <!-- Decoration on top (Jellyfish Ring) -->
-          <img
-            class="decoration-img"
-            src="images/decoration1.png"
-            alt="Jellyfish Decoration"
-          />
-          <!-- Default avatar behind (Discord logo) -->
-          <img
-            class="default-avatar"
-            src="images/default-avatar.png"
-            alt="Discord Logo"
-          />
+        <!-- ====== DECORATION #1 WRAPPER ====== -->
+        <div class="decoration-wrap">
+          <!-- The clickable cell (entire box triggers download) -->
+          <div 
+            class="decoration-cell" 
+            data-image="images/decoration1.png"
+          >
+            <!-- Decoration on top (Jellyfish Ring) -->
+            <img
+              class="decoration-img"
+              src="images/decoration1.png"
+              alt="Jellyfish Decoration"
+            />
+            <!-- Default avatar behind (Discord logo) -->
+            <img
+              class="default-avatar"
+              src="images/default-avatar.png"
+              alt="Discord Logo"
+            />
+          </div>
+
+          <!-- This text shows only on hover of .decoration-wrap -->
+          <div class="download-info">
+            Click to download
+          </div>
         </div>
-        <!-- Text below the first cell -->
-        <div class="download-info">Click to download</div>
+        <!-- End .decoration-wrap -->
 
 
-        <!-- ====== DECORATION CELL #2 ====== -->
-        <div 
-          class="decoration-cell" 
-          data-image="images/decoration2.png"
-        >
-          <!-- Decoration on top (Second Frame) -->
-          <img
-            class="decoration-img"
-            src="images/decoration2.png"
-            alt="Second Decoration Frame"
-          />
-          <!-- Default avatar behind (Discord logo) -->
-          <img
-            class="default-avatar"
-            src="images/default-avatar.png"
-            alt="Discord Logo"
-          />
+        <!-- ====== DECORATION #2 WRAPPER ====== -->
+        <div class="decoration-wrap">
+          <div 
+            class="decoration-cell" 
+            data-image="images/decoration2.png"
+          >
+            <!-- Another frame -->
+            <img
+              class="decoration-img"
+              src="images/decoration2.png"
+              alt="Bamboo Decoration"
+            />
+            <img
+              class="default-avatar"
+              src="images/default-avatar.png"
+              alt="Discord Logo"
+            />
+          </div>
+
+          <div class="download-info">
+            Click to download
+          </div>
         </div>
-        <!-- Text below the second cell -->
-        <div class="download-info">Click to download</div>
+        <!-- End .decoration-wrap -->
 
 
         <!-- 
-          Add more cells here if you like. 
-          Just repeat the .decoration-cell + .download-info blocks
-          and change 'data-image', 'src', etc. 
+          Add more .decoration-wrap blocks for more frames.
+          Just change data-image, src, alt, etc.
         -->
 
       </div><!-- end .decorations-grid -->
