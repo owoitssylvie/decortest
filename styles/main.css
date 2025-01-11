@@ -27,24 +27,17 @@ h1 {
 }
 
 /* 
-   UPDATED:
-   Limit the banner width (e.g., max 1000px) 
-   and center it with margin: 0 auto.
+   We limit the banner size and center it.
+   Increase or decrease max-width as you like (e.g. 1200px).
 */
 .category-banner img {
   display: block;
-  /* Option A: bigger fixed max-width */
-  /* max-width: 1200px; */
-
-  /* Option B: use viewport width (comment out if you prefer a fixed px value) */
-  max-width: 80vw;
-
+  max-width: 1000px; /* e.g., 1000px or 80vw, etc. */
   width: 100%;
   height: auto;
   object-fit: cover;
   margin: 0 auto;
 }
-
 
 /* 
    ========== DECORATIONS GRID ==========
@@ -93,7 +86,7 @@ h1 {
 
 /* 
    ========== DEFAULT AVATAR (Discord Logo) BEHIND ==========
-   Lower z-index => behind the ring. Hidden until hover.
+   Lower z-index => behind the ring
 */
 .default-avatar {
   position: absolute;
@@ -144,8 +137,6 @@ h1 {
 
 /* 
    ========== HOVER TO SHOW AVATAR & TEXT ==========
-   1) Show default avatar inside the cell
-   2) Show "Click to download" text below the cell
 */
 .decoration-wrap:hover .default-avatar {
   opacity: 1;
