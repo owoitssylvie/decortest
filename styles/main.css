@@ -26,18 +26,23 @@ h1 {
   margin: 2rem 0;
 }
 
+/* 
+   UPDATED:
+   Limit the banner width (e.g., max 1000px) 
+   and center it with margin: 0 auto.
+*/
 .category-banner img {
   display: block;
-  width: 100%;
+  max-width: 1000px; /* you can adjust this to 800px, etc. */
+  width: 100%;       /* ensures responsiveness up to max-width */
   height: auto;
-  max-height: 400px;
   object-fit: cover;
+  margin: 0 auto;    /* centers horizontally */
 }
 
 /* 
    ========== DECORATIONS GRID ==========
-   Each item in the grid is now '.decoration-wrap' 
-   (instead of the cell alone).
+   Each .decoration-wrap is one decoration + its "download" text.
 */
 .decorations-grid {
   display: grid;
@@ -49,19 +54,19 @@ h1 {
 
 /* 
    ========== DECORATION WRAP ==========
-   Stacks the .decoration-cell (the box) above .download-info (the text).
-   This is our "hover" boundary for each decoration.
+   Stacks the .decoration-cell above the .download-info text
+   and is the "hover" boundary for each item.
 */
 .decoration-wrap {
   display: flex;
   flex-direction: column;
   align-items: center;  /* center the text horizontally */
-  position: relative;   /* keep the cell in normal flow */
+  position: relative;
 }
 
 /* 
    ========== DECORATION CELL ==========
-   The clickable 250×250 box. 
+   The clickable 250×250 box.
 */
 .decoration-cell {
   width: 250px;
@@ -73,6 +78,7 @@ h1 {
   text-align: center;
   cursor: pointer;           /* entire cell is clickable */
   transition: background-color 0.2s;
+  margin: 0 auto;
 }
 
 .decoration-cell:hover {
@@ -81,7 +87,7 @@ h1 {
 
 /* 
    ========== DEFAULT AVATAR (Discord Logo) BEHIND ==========
-   Lower z-index so it's behind the ring
+   Lower z-index => behind the ring. Hidden until hover.
 */
 .default-avatar {
   position: absolute;
@@ -98,7 +104,7 @@ h1 {
 
 /* 
    ========== DECORATION IMAGE (RING) ON TOP ==========
-   Higher z-index => appears in front of avatar.
+   Higher z-index => appears in front of the avatar.
 */
 .decoration-img {
   position: absolute;
@@ -107,7 +113,7 @@ h1 {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  border: 2px solid #444; 
+  border: 2px solid #444;
   border-radius: 4px;
   transition: transform 0.2s;
   z-index: 2;
@@ -118,10 +124,8 @@ h1 {
 }
 
 /* 
-   ========== DOWNLOAD INFO (TEXT) ==========
-   Placed BELOW the 250×250 box, hidden by default. 
-   We show it on '.decoration-wrap:hover' => 
-   that ensures only this decoration's text appears on hover.
+   ========== DOWNLOAD INFO (TEXT) BELOW THE CELL ========== 
+   Hidden by default; we show it on hover of .decoration-wrap.
 */
 .download-info {
   margin-top: 6px;
@@ -129,11 +133,11 @@ h1 {
   font-size: 0.95rem;
   opacity: 0;
   transition: opacity 0.2s;
-  pointer-events: none; /* can't click it (clicks go to .decoration-cell) */
+  pointer-events: none; /* so clicks go to the cell above */
 }
 
 /* 
-   ========== HOVER TO SHOW OVERLAY & TEXT ==========
+   ========== HOVER TO SHOW AVATAR & TEXT ==========
    1) Show default avatar inside the cell
    2) Show "Click to download" text below the cell
 */
