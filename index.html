@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <title>Avatar Decorations</title>
-  <!-- Link to your main stylesheet -->
   <link rel="stylesheet" href="styles/main.css" />
 </head>
 <body>
@@ -20,63 +19,38 @@
     <section class="category">
       <!-- Banner Section -->
       <div class="category-banner">
-        <!-- Replace with your actual banner image -->
         <img src="images/banner.png" alt="Sample Banner" />
       </div>
 
-      <!-- Grid of Decorations (multiple cells) -->
+      <!-- Grid of Decorations -->
       <div class="decorations-grid">
-        
-        <!-- ====== DECORATION #1 ====== -->
-        <div class="decoration-cell">
-          <!-- Decoration on top -->
+
+        <!-- ====== DECORATION CELL #1 ====== -->
+        <div 
+          class="decoration-cell" 
+          data-image="images/decoration1.png"
+        >
+          <!-- Decoration on top (Jellyfish Ring) -->
           <img
             class="decoration-img"
             src="images/decoration1.png"
             alt="Jellyfish Decoration"
           />
-          <!-- Default avatar behind -->
+
+          <!-- Default avatar behind (Discord logo) -->
           <img
             class="default-avatar"
             src="images/default-avatar.png"
             alt="Discord Logo"
           />
-          <!-- Download link text -->
-          <a
-            class="download-link"
-            href="images/decoration1.png"
-            download
-          >
-            Click to download
-          </a>
         </div>
+        <!-- Text below the cell -->
+        <div class="download-info">Click to download</div>
 
-        <!-- ====== DECORATION #2 (example) ====== -->
-        <div class="decoration-cell">
-          <img
-            class="decoration-img"
-            src="images/decoration2.png"
-            alt="Another Decoration"
-          />
-          <img
-            class="default-avatar"
-            src="images/default-avatar.png"
-            alt="Discord Logo"
-          />
-          <a
-            class="download-link"
-            href="images/decoration2.png"
-            download
-          >
-            Click to download
-          </a>
-        </div>
-
-        <!-- 
-          Add more .decoration-cell blocks for each new decoration.
-          Just change the src/href to the correct PNG files.
+        <!-- ====== ADD MORE CELLS HERE IF YOU LIKE ======
+             Just copy the block above, change 'data-image', 'src' attributes, etc.
         -->
-        
+
       </div><!-- end .decorations-grid -->
     </section><!-- end .category -->
 
