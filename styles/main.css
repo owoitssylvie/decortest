@@ -26,34 +26,29 @@ h1 {
   margin: 2rem 0;
 }
 
-/* 
-   We limit banner height to 400px and let it scale
-   proportionally to the screen width, but not bigger
-   than its container.
-*/
 .category-banner img {
   display: block;
-  width: 100%;       /* fills parent container's width */
-  height: auto;      /* maintains aspect ratio */
-  max-height: 400px; /* optional: never exceed 400px tall */
-  object-fit: cover; /* crops if aspect ratio differs */
+  width: 100%;
+  height: auto;
+  max-height: 400px; /* Remains the same */
+  object-fit: cover;
 }
 
 /* 
    ========== DECORATIONS GRID ==========
-   Using smaller 150px columns to fit more items in a row.
+   Only change: from 250px down to 150px to shrink the cells.
 */
 .decorations-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, 150px);
   gap: 1rem;
   padding: 1rem;
-  justify-content: center; /* centers columns if there's extra space */
+  justify-content: center;
 }
 
 /* 
    ========== DECORATION CELL ==========
-   Each cell is 150×150. 
+   Only change: from 250×250 down to 150×150
 */
 .decoration-cell {
   width: 150px;
@@ -72,29 +67,21 @@ h1 {
   background-color: #363636;
 }
 
-/* 
-   ========== DEFAULT AVATAR (Discord Logo) - BEHIND ==========
-   z-index: 1 => behind the decoration ring
-   width: 80% => can shrink if needed
-*/
+/* DEFAULT AVATAR (Discord Logo) behind the decoration ring */
 .default-avatar {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 80%;
+  width: 80%;             /* Unchanged: still 80% of cell width */
   height: auto;
-  opacity: 0;  /* hidden until hover */
+  opacity: 0;             /* hidden until hover */
   transition: opacity 0.3s;
   pointer-events: none;
-  z-index: 1;
+  z-index: 1;             /* behind the ring */
 }
 
-/* 
-   ========== DECORATION IMAGE (e.g., Jellyfish Ring) - ON TOP ==========
-   z-index: 2 => above the avatar
-   object-fit: contain => fits entire ring inside the cell
-*/
+/* DECORATION IMG (e.g., Jellyfish Ring) on top */
 .decoration-img {
   position: absolute;
   top: 0;
@@ -105,17 +92,14 @@ h1 {
   border: 2px solid #444; /* optional border */
   border-radius: 4px;
   transition: transform 0.2s;
-  z-index: 2;
+  z-index: 2;             /* above default-avatar */
 }
 
 .decoration-cell:hover .decoration-img {
   transform: scale(1.02);
 }
 
-/* 
-   ========== DOWNLOAD LINK (TEXT) ==========
-   Centered near the bottom, hidden by default => opacity: 0
-*/
+/* DOWNLOAD LINK (Text) - same as before */
 .download-link {
   position: absolute;
   bottom: 10px;
@@ -124,15 +108,12 @@ h1 {
   color: #fff;
   text-decoration: underline;
   font-weight: 500;
-  opacity: 0;           /* HIDDEN by default */
+  opacity: 0;             /* hidden by default */
   transition: opacity 0.3s;
-  z-index: 3;           /* on top of both images */
+  z-index: 3;             /* above both images */
 }
 
-/* 
-   ========== HOVER REVEALS AVATAR & LINK ==========
-   Ensures default-avatar & download-link fade in ONLY on hover.
-*/
+/* HOVER reveals avatar & link */
 .decoration-cell:hover .default-avatar,
 .decoration-cell:hover .download-link {
   opacity: 1;
