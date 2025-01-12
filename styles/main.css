@@ -26,17 +26,22 @@ h1 {
   margin: 2rem 0;
 }
 
+/* 
+   We limit banner height to 400px and let it scale
+   proportionally to the screen width, but not bigger
+   than its container.
+*/
 .category-banner img {
   display: block;
-  width: 100%;
-  height: auto;
-  max-height: 400px;
-  object-fit: cover;
+  width: 100%;       /* fills parent container's width */
+  height: auto;      /* maintains aspect ratio */
+  max-height: 400px; /* optional: never exceed 400px tall */
+  object-fit: cover; /* crops if aspect ratio differs */
 }
 
 /* 
    ========== DECORATIONS GRID ==========
-   Updated to 150px so more items can fit in a row.
+   Using smaller 150px columns to fit more items in a row.
 */
 .decorations-grid {
   display: grid;
@@ -48,7 +53,7 @@ h1 {
 
 /* 
    ========== DECORATION CELL ==========
-   Forced 150×150, smaller than before (which was 250×250).
+   Each cell is 150×150. 
 */
 .decoration-cell {
   width: 150px;
@@ -68,9 +73,9 @@ h1 {
 }
 
 /* 
-   ========== DEFAULT AVATAR (Discord Logo) BEHIND ==========
-   Lower z-index so it's behind the decoration ring.
-   You can lower 'width: 80%' if the avatar still feels too big in 150px cells.
+   ========== DEFAULT AVATAR (Discord Logo) - BEHIND ==========
+   z-index: 1 => behind the decoration ring
+   width: 80% => can shrink if needed
 */
 .default-avatar {
   position: absolute;
@@ -82,12 +87,13 @@ h1 {
   opacity: 0;  /* hidden until hover */
   transition: opacity 0.3s;
   pointer-events: none;
-  z-index: 1;  /* behind the ring */
+  z-index: 1;
 }
 
 /* 
-   ========== DECORATION IMG (RING) ON TOP ==========
-   Higher z-index so it appears in front of the avatar.
+   ========== DECORATION IMAGE (e.g., Jellyfish Ring) - ON TOP ==========
+   z-index: 2 => above the avatar
+   object-fit: contain => fits entire ring inside the cell
 */
 .decoration-img {
   position: absolute;
@@ -108,7 +114,7 @@ h1 {
 
 /* 
    ========== DOWNLOAD LINK (TEXT) ==========
-   Centered near the bottom, hidden by default.
+   Centered near the bottom, hidden by default => opacity: 0
 */
 .download-link {
   position: absolute;
@@ -118,13 +124,14 @@ h1 {
   color: #fff;
   text-decoration: underline;
   font-weight: 500;
-  opacity: 0;
+  opacity: 0;           /* HIDDEN by default */
   transition: opacity 0.3s;
-  z-index: 3; /* above avatar and ring */
+  z-index: 3;           /* on top of both images */
 }
 
 /* 
    ========== HOVER REVEALS AVATAR & LINK ==========
+   Ensures default-avatar & download-link fade in ONLY on hover.
 */
 .decoration-cell:hover .default-avatar,
 .decoration-cell:hover .download-link {
