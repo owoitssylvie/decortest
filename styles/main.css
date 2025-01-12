@@ -46,8 +46,8 @@ h1 {
 .decorations-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, 250px);
-  gap: 0.5rem;
-  padding: 0.5rem;
+  gap: 0.1rem;
+  padding: 1rem;
   justify-content: center; /* centers columns if there's extra space */
 }
 
