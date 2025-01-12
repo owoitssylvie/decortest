@@ -45,11 +45,10 @@ h1 {
 */
 .decorations-grid {
   display: grid;
-  /* reduce gap from 1rem to, say, 0.5rem or 0.2rem */
+  grid-template-columns: repeat(auto-fit, 250px);
   gap: 0.5rem;
-  /* reduce padding from 1rem if desired */
-  padding: 0.5rem;
-  justify-content: center;
+  padding: 1rem;
+  justify-content: center; /* centers columns if there's extra space */
 }
 
 /* 
@@ -78,7 +77,7 @@ h1 {
   text-align: center;
   cursor: pointer;           /* entire cell is clickable */
   transition: background-color 0.2s;
-  margin: 0; 
+  margin: 0 auto;
 }
 
 .decoration-cell:hover {
