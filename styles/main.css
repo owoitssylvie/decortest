@@ -48,7 +48,7 @@ h1 {
   grid-template-columns: repeat(auto-fit, 150px);
 
   /* 1) A small gap between cells */
-  gap: 0.3rem;
+  gap: 1rem;
 
   /* 2) Some padding to push the grid away from the banner */
   padding: 1rem;
