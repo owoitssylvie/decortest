@@ -21,63 +21,46 @@ h1 {
   font-weight: 400;
 }
 
-/* ========== BANNER / CATEGORY ========== */
+/* ========== CATEGORY & BANNER ========== */
 .category {
   margin: 2rem 0;
 }
 
-/* 
-   We limit the banner size and center it.
-   Increase or decrease max-width as you like (e.g. 1200px).
-*/
 .category-banner img {
   display: block;
-  max-width: 1000px; /* e.g., 1000px or 80vw, etc. */
   width: 100%;
   height: auto;
+  max-height: 400px;
   object-fit: cover;
-  margin: 0 auto;
 }
 
 /* 
    ========== DECORATIONS GRID ==========
-   Each .decoration-wrap is one decoration + its "download" text.
+   Updated to 150px so more items can fit in a row.
 */
 .decorations-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 250px);
+  grid-template-columns: repeat(auto-fit, 150px);
   gap: 1rem;
   padding: 1rem;
   justify-content: center; /* centers columns if there's extra space */
 }
 
 /* 
-   ========== DECORATION WRAP ==========
-   Stacks the .decoration-cell above the .download-info text
-   and is the "hover" boundary for each item.
-*/
-.decoration-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;  /* center the text horizontally */
-  position: relative;
-}
-
-/* 
    ========== DECORATION CELL ==========
-   The clickable 250×250 box.
+   Forced 150×150, smaller than before (which was 250×250).
 */
 .decoration-cell {
-  width: 250px;
-  height: 250px;
+  width: 150px;
+  height: 150px;
   position: relative;
+  margin: 0 auto;
   background-color: #2b2b2b;
   border-radius: 4px;
   overflow: hidden;
   text-align: center;
-  cursor: pointer;           /* entire cell is clickable */
+  cursor: pointer;
   transition: background-color 0.2s;
-  margin: 0 auto;
 }
 
 .decoration-cell:hover {
@@ -86,7 +69,8 @@ h1 {
 
 /* 
    ========== DEFAULT AVATAR (Discord Logo) BEHIND ==========
-   Lower z-index => behind the ring
+   Lower z-index so it's behind the decoration ring.
+   You can lower 'width: 80%' if the avatar still feels too big in 150px cells.
 */
 .default-avatar {
   position: absolute;
@@ -95,15 +79,15 @@ h1 {
   transform: translate(-50%, -50%);
   width: 80%;
   height: auto;
-  opacity: 0;               /* hidden until hover */
+  opacity: 0;  /* hidden until hover */
   transition: opacity 0.3s;
   pointer-events: none;
-  z-index: 1;
+  z-index: 1;  /* behind the ring */
 }
 
 /* 
-   ========== DECORATION IMAGE (RING) ON TOP ==========
-   Higher z-index => appears in front of the avatar.
+   ========== DECORATION IMG (RING) ON TOP ==========
+   Higher z-index so it appears in front of the avatar.
 */
 .decoration-img {
   position: absolute;
@@ -112,7 +96,7 @@ h1 {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  border: 2px solid #444;
+  border: 2px solid #444; /* optional border */
   border-radius: 4px;
   transition: transform 0.2s;
   z-index: 2;
@@ -123,24 +107,26 @@ h1 {
 }
 
 /* 
-   ========== DOWNLOAD INFO (TEXT) BELOW THE CELL ========== 
-   Hidden by default; we show it on hover of .decoration-wrap.
+   ========== DOWNLOAD LINK (TEXT) ==========
+   Centered near the bottom, hidden by default.
 */
-.download-info {
-  margin-top: 6px;
-  margin-bottom: 1rem;
-  font-size: 0.95rem;
+.download-link {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  text-decoration: underline;
+  font-weight: 500;
   opacity: 0;
-  transition: opacity 0.2s;
-  pointer-events: none; /* so clicks go to the cell above */
+  transition: opacity 0.3s;
+  z-index: 3; /* above avatar and ring */
 }
 
 /* 
-   ========== HOVER TO SHOW AVATAR & TEXT ==========
+   ========== HOVER REVEALS AVATAR & LINK ==========
 */
-.decoration-wrap:hover .default-avatar {
-  opacity: 1;
-}
-.decoration-wrap:hover .download-info {
+.decoration-cell:hover .default-avatar,
+.decoration-cell:hover .download-link {
   opacity: 1;
 }
