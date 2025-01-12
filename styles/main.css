@@ -45,11 +45,16 @@ h1 {
 */
 .decorations-grid {
   display: grid;
-  /* each cell is still 150px wide */
   grid-template-columns: repeat(auto-fit, 150px);
-  gap: 0;            /* no gap between cells */
-  padding: 0;        /* no padding around the grid */
-  justify-content: center; 
+
+  /* 1) A small gap between cells */
+  gap: 0.25rem;
+
+  /* 2) Some padding to push the grid away from the banner */
+  padding: 1rem;
+
+  /* centers columns if there's extra space */
+  justify-content: center;
 }
 
 /* 
@@ -68,11 +73,16 @@ h1 {
    ========== DECORATION CELL ==========
    The clickable 250×250 box.
 */
+/* The decoration cell itself can stay at margin: 0 if you like,
+   or give it a tiny margin if you prefer that approach:
+     margin: 0.25rem;
+   But typically gap + padding is enough.
+*/
 .decoration-cell {
   width: 150px;
   height: 150px;
   position: relative;
-  margin: 0;         /* remove auto margin */
+  /* margin: 0; // can remain 0 unless you want each cell to have margin. */
   background-color: #2b2b2b;
   border-radius: 4px;
   overflow: hidden;
