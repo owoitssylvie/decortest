@@ -46,14 +46,15 @@ h1 {
 }
 
 .nav-image {
-  text-align: center;          /* center the image horizontally */
-  margin: 1rem 0;             /* some space above/below */
+  text-align: center;
+  margin: 1rem 0;
 }
 
 .nav-image img {
-  max-width: 100%;            /* so it shrinks on smaller screens */
-  height: auto;               /* maintain aspect ratio */
-  /* If you want a maximum size, you can do: max-width: 600px; */
+  max-width: 400px;  /* or whatever width you prefer */
+  width: 100%;       /* ensures responsiveness if the screen is smaller */
+  height: auto;      /* maintain aspect ratio */
+  display: block;    /* keeps it centered when using margin: 0 auto (if you add that) */
 }
 
 
