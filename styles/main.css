@@ -46,15 +46,15 @@ h1 {
 }
 
 .nav-image {
-  text-align: center;
-  margin: 1rem 0;
+  text-align: center;  /* ensures if the img is inline, it’s centered */
+  margin: 1rem 0;      /* optional spacing above/below the image */
 }
 
 .nav-image img {
-  max-width: 400px;  /* or whatever width you prefer */
-  width: 100%;       /* ensures responsiveness if the screen is smaller */
-  height: auto;      /* maintain aspect ratio */
-  display: block;    /* keeps it centered when using margin: 0 auto (if you add that) */
+  display: block;      /* so margin: 0 auto works reliably */
+  margin: 0 auto;      /* center it horizontally */
+  width: 300px;        /* force a fixed smaller width, adjust to your liking */
+  height: auto;        /* maintain aspect ratio */
 }
 
 
