@@ -45,6 +45,18 @@ h1 {
   color: #aaa;             /* lighten/darken on hover */
 }
 
+.nav-image {
+  text-align: center;          /* center the image horizontally */
+  margin: 1rem 0;             /* some space above/below */
+}
+
+.nav-image img {
+  max-width: 100%;            /* so it shrinks on smaller screens */
+  height: auto;               /* maintain aspect ratio */
+  /* If you want a maximum size, you can do: max-width: 600px; */
+}
+
+
 /* ========== BANNER / CATEGORY ========== */
 .category {
   margin: 2rem 0;
