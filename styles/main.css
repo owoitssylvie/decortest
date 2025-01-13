@@ -21,6 +21,30 @@ h1 {
   font-weight: 400;
 }
 
+/* ========== NAV LINKS STYLING ========== */
+/* 
+   .top-nav sits right below the <h1> in your HTML,
+   so this ensures the links are on one line, centered, etc.
+*/
+.top-nav {
+  margin: 0.5rem 0;        /* spacing around the nav area */
+  text-align: center;      /* center the links horizontally */
+}
+
+.top-nav a {
+  display: inline-block;   /* sit side-by-side horizontally */
+  margin: 0 1rem;          /* space between each link */
+  color: #fff;             /* link color */
+  text-decoration: none;   /* remove underlines by default */
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+/* Optional hover color or effect */
+.top-nav a:hover {
+  color: #aaa;             /* lighten/darken on hover */
+}
+
 /* ========== BANNER / CATEGORY ========== */
 .category {
   margin: 2rem 0;
