@@ -32,17 +32,17 @@ h1 {
 }
 
 .top-nav a {
-  display: inline-block;   /* sit side-by-side horizontally */
-  margin: 0 1rem;          /* space between each link */
-  color: #fff;             /* link color */
-  text-decoration: none;   /* remove underlines by default */
+  display: inline-block;
+  margin: 0 1rem;
+  color: #fff;
+  text-decoration: none;
   font-weight: 500;
+  font-size: 1.2rem; /* Increase from, say, 1rem (16px) to 1.2rem (19.2px) */
   transition: color 0.2s;
 }
 
-/* Optional hover color or effect */
 .top-nav a:hover {
-  color: #aaa;             /* lighten/darken on hover */
+  color: #aaa;
 }
 
 .nav-image {
