@@ -56,6 +56,7 @@ header h1 {
 
 .top-nav a:hover {
   color: #aaa;
+  text-decoration: underline;
 }
 
 .nav-image {
