@@ -95,6 +95,12 @@ header h1 {
   /* e.g., p { margin-bottom: 1rem; } */
 }
 
+/* NEW OVERRIDE FOR LINKS INSIDE .faq-extra-text */
+.faq-extra-text a {
+  color: #00f;        /* bright blue */
+  text-decoration: underline;
+}
+
 
 
 /* ========== BANNER / CATEGORY ========== */
