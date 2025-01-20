@@ -79,6 +79,28 @@ header h1 {
   color: #fff;         /* optional, if you want to ensure it’s white */
 }
 
+.faq-extra-text {
+  /* Centers the block on the page */
+  max-width: 600px; 
+  margin: 2rem auto; 
+  
+  /* Ensures each line is left-aligned inside the centered block */
+  text-align: left; 
+  line-height: 1.5;    
+
+  /* Make the text bigger */
+  font-size: 1.2rem; /* adjust as needed (e.g., 1.3rem, 1.4rem, etc.) */
+
+  /* (Optional) slightly increase spacing between paragraphs if you like */
+  /* e.g., p { margin-bottom: 1rem; } */
+}
+
+/* NEW OVERRIDE FOR LINKS INSIDE .faq-extra-text */
+.faq-extra-text a {
+  color: rgb(63, 72, 239);        /* bright blue */
+  text-decoration: underline;
+}
+
 
 /* ========== BANNER / CATEGORY ========== */
 .category {
