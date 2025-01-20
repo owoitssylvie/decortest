@@ -97,7 +97,7 @@ header h1 {
 
 /* NEW OVERRIDE FOR LINKS INSIDE .faq-extra-text */
 .faq-extra-text a {
-  color: #00f;        /* bright blue */
+  color: rgb(63, 72, 239);        /* bright blue */
   text-decoration: underline;
 }
 
