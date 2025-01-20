@@ -49,26 +49,166 @@
 
 <!-- NEW BLOCK FOR EXTRA TEXT -->
 <div class="faq-extra-text">
-  <p><u><b>Submitting Your Decors</b></u></p>
-  <p>To submit your decors, you will need to contact me on Discord. You can join the <a href="https://discord.gg/dXp2SdxDcP">Decor Server</a> and then ping me in the #decoration-discussion channel.</p>
-  <p>Please follow these guidelines as well as <a href="https://i.imgur.com/WHo9g5S.png">Decor's Guidelines</a>:</p>
-  <p><b>1.</b> Must be <b>YOUR OWN</b> work. Stolen/unoriginal decorations will be denied.</p>
-  <p><b>2.</b> Must have a particular theme/category, rather than several unrelated decors.</p>
-  <p><b>3.</b> Must submit a minimum of 6 decors per submission. I'd rather not create a new category and banner just for 1 or 2 decorations.</p>
-  <p><b>4.</b> Use of AI is okay, but decorations may be removed if an artist claims the AI image as trained on their art without permission.</p>
-  <p><b>5.</b> Must use the <a href="https://i.imgur.com/PdfzGUl.png">template</a> to ensure correct sizing. Please try to avoid the red and blue areas.</p>
-  <p>&nbsp;</p>
-  <p><u><b>Decoration already exists</b></u></p>
-  <p>Decor stores the images in a server; so if the exact same image gets uploaded twice, it'll error because the metadata matches an existing one. You'll need to change this metadata to upload the decor.</p>
-  <p>One way of doing this, is to use <a href="https://www.strerr.com/en/md5_hash_chanager.html">this site</a>, or you can go to <a href="https://ezgif.com/resize">ezgif</a> and resize it by like 1%. Both options work.</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p><u><b>Credits:</b></u></p>
-  <p><b>Website Developer:</b> Jelly</p>
-  <p><b>Cute Jellyfish Header Images:</b> Zin</p>
-  <p><b>Animated Jellyfish Decor:</b> KURAMA</p>
+  <!-- TOP-LEVEL HEADING -->
+  <h2 id="decor-guide">Decor Guide: <strong>Creating a Decoration</strong></h2>
+
+  <h3><em>Guide by @kurama0</em></h3>
+
+  <!-- SUMMARY SECTION -->
+  <h2 id="summary">Summary</h2>
+  <ol>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#project-setup-and-limitations">Project Setup and Limitations</a></li>
+    <li><a href="#effect-decoration">Effect Decoration</a></li>
+    <li><a href="#apparel-decoration">Apparel Decoration</a></li>
+    <li><a href="#object-decoration">Object Decoration</a></li>
+    <li><a href="#character-decoration">Character Decoration</a></li>
+  </ol>
+
+  <!-- INTRODUCTION -->
+  <h2 id="introduction">Introduction</h2>
+  <p><strong>Note</strong>: This guide assumes that you’ve read and understood the 
+    <a href="https://github.com/decor-discord/.github/blob/main/GUIDELINES.md">Decor Guidelines</a>. 
+    If in doubt, join and ask your question in the official 
+    <a href="https://discord.gg/dXp2SdxDcP">Decor Discord server</a>.
+  </p>
+  <p>This is NOT an official guide, nor was it written by a member of the Decor team. I am simply a user.</p>
+  <p>Before starting, you will need to decide which type of decoration you want to make. You can of course mix them up!</p>
+
+  <p>I will divide decorations into different categories, all with their unique traits and charm:</p>
+  <ul>
+    <li><strong>Effect Decoration</strong>: Effects around your profile picture (sparkles, fire, energy, etc.).</li>
+    <li><strong>Apparel Decoration</strong>: Clothes or accessories on your PFP (hats, glasses, etc.).</li>
+    <li><strong>Object Decoration</strong>: One or multiple objects near your PFP (tools, weapons, etc.).</li>
+    <li><strong>Character Decoration</strong>: Characters performing an action, peeking behind the PFP, etc.</li>
+    <li><strong>Misc Decoration</strong>: Any other miscellaneous graphics (UI elements, abstract images, etc.).</li>
+  </ul>
+
+  <p>In addition to these categories, there exist two types of decorations: <strong>still images</strong> and 
+    <strong>animations</strong>. Avatar decorations offer lots of creativity—2D art, 3D animations, a photo of your pet, 
+    you name it!
+  </p>
+  <p>In this guide, you will learn how to create:</p>
+  <ul>
+    <li>A 2D animated <strong>Effect Decoration</strong></li>
+    <li>A 3D animated <strong>Object Decoration</strong></li>
+    <li>A simple still <strong>Apparel Decoration</strong></li>
+    <li>A simple animated <strong>Character Decoration</strong></li>
+  </ul>
+
+  <!-- PROJECT SETUP -->
+  <h2 id="project-setup-and-limitations">Project Setup and Limitations</h2>
+  <h3>DOWNLOAD THE DECORATION TEMPLATE 
+    <a href="https://raw.githubusercontent.com/decor-discord/.github/main/assets/template.png"><strong>HERE</strong></a>
+  </h3>
+  <p>Before starting to make your decoration, you have to set your project up correctly and know the limitations of 
+    decorations in Decor.
+  </p>
+  <p>Your exported decoration should be <strong>under 3MB</strong> and have <strong>square dimensions</strong>, and 
+    the format must be <strong>APNG</strong>. (File extension will be <code>.png</code> no matter if it’s a still image 
+    or an animation!) I recommend 
+    <a href="https://ezgif.com/apng-maker">ezgif.com/apng-maker</a> to convert your images and animations to the APNG format.
+  </p>
+  <p>For <strong>animated decorations</strong>, you can choose a frame rate of up to 60 FPS, and the animation can have 
+    up to around 1200 frames <em>(do not)</em> (seems incomplete?). 
+  </p>
+  <p>If you decide to animate at 60 FPS, be aware that the file size will be difficult to reduce! Also, the first frame 
+    will be what shows up by default, so I recommend making your profile picture mostly visible at first.
+  </p>
+  <p>In the template, the blue “Status” circle is where your status icon will be, and that icon will always be 
+    <strong>over</strong> your decoration. So avoid placing important elements there.
+  </p>
+  <p>Finally, don’t be scared to <strong>scale down</strong> your finished decoration to keep it under 3MB. 
+    Zoom out occasionally to ensure it’s distinguishable at a small scale!
+  </p>
+
+  <!-- EFFECT DECORATION -->
+  <h2 id="effect-decoration">Effect Decoration</h2>
+  <p>An <strong>Effect Decoration</strong>’s appeal is often in its <em>motion</em>, so animation is important! 
+    Of course, you can use a still image, but it won’t be as cool. 
+  </p>
+  <p>Here, I hand-drew and animated a simple waterbending animation around the profile picture, using Clip Studio Paint 
+    (but you can use any software/app you want).
+  </p>
+  <p>If you want to animate for free on PC, try 
+    <a href="https://krita.org/en/download/">Krita</a> or 
+    <a href="https://opentoonz.github.io/e/">OpenToonz</a>. On mobile, 
+    you can use <strong>Ibis Paint X</strong> or <strong>FlipaClip</strong>.
+  </p>
+  <p>I started by importing the template and drawing lines to decide the waterbending path. 
+    It’s important for the movement to be sensical—since it’s water, it’s more flowy and curvy.
+  </p>
+  <p><em>(IMG PLACEHOLDER for rough version)</em></p>
+  <p>I made a rough version of the animation to visualize the idea.</p>
+  <p><em>(GIF PLACEHOLDER)</em></p>
+  <p>Then, I made the final animation and added color.</p>
+  <p><em>(GIF PLACEHOLDER)</em></p>
+  <p>Finally, I used After Effects for post-processing improvements, exported a PNG sequence, 
+    converted it to APNG, and <em>it’s done!</em>
+  </p>
+  <p><em>(GIF PLACEHOLDER)</em></p>
+
+  <!-- APPAREL DECORATION -->
+  <h2 id="apparel-decoration">Apparel Decoration</h2>
+  <p>For an apparel decoration (like hats, ears, etc.), we’ll use 
+    <a href="https://www.photopea.com/">Photopea</a>, a free online Photoshop alternative.
+  </p>
+  <p>Import the template, <strong>create a new layer</strong>, draw your apparel on that layer, 
+    make the template layer invisible, export as a PNG, and use 
+    <a href="https://ezgif.com/apng-maker">ezgif.com/apng-maker</a> to convert to <strong>APNG</strong>.
+  </p>
+  <p>Here’s an example (video link placeholder):</p>
+  <p><em>https://github.com/user-attachments/assets/0f7ee99f-707a-4785-818f-186f6d710e23</em></p>
+  <p><em>(I forgot to convert to APNG in the video... oops)</em></p>
+
+  <!-- OBJECT DECORATION -->
+  <h2 id="object-decoration">Object Decoration</h2>
+  <p>For an object decoration, I made a 3D animation in Blender first.</p>
+  <p><em>https://github.com/user-attachments/assets/3de4239a-0aa2-4422-8bcd-024ba05fa641</em></p>
+  <p>Then I imported it into After Effects for smoke puff + post-process improvements, exported, 
+    and that’s it!
+  </p>
+  <p><img src="https://github.com/user-attachments/assets/85bbda07-8e4f-474c-825b-0855b8aedd02/deco_shuriken_preview.png" alt="deco_shuriken_preview" /></p>
+
+  <!-- CHARACTER DECORATION -->
+  <h2 id="character-decoration">Character Decoration</h2>
+  <p>For a character decoration, you can search Google Images for a transparent GIF. 
+    Use Tools → Color = Transparent, Type = GIF.
+  </p>
+  <p><img src="https://github.com/user-attachments/assets/f6cfb916-f453-42a7-b7bf-21f032695ad4/image.png" alt="Google Images screenshot" /></p>
+  <p>If you’ve read the 
+    <a href="https://github.com/decor-discord/.github/blob/main/GUIDELINES.md">Decor Guidelines</a>, 
+    you know random non-creative corner images are disallowed. To avoid that, add a border or extra design to the PFP. 
+    If you’re too lazy, here’s a simple blue border you can use:
+  </p>
+  <p><img src="https://github.com/user-attachments/assets/4b5470c5-a4af-4d24-a0c6-f41bc7464e3f/decoavatarborder.png" alt="decoavatarborder" /></p>
+  <p>After finding the transparent GIF, go to 
+    <a href="https://app.clipchamp.com/">Clipchamp</a>. Import the template, border, and GIF. Layer them:
+  </p>
+  <ol>
+    <li>Template on the bottom</li>
+    <li>Border above template</li>
+    <li>GIF above the border</li>
+  </ol>
+  <p>Shorten layers to change animation length, move/resize the character so it doesn’t cover the 
+    red-ish circle. If you have trouble, refresh the page occasionally—Clipchamp can be finicky.
+  </p>
+  <p>When happy, delete the template layer and export as GIF!</p>
+  <p><em>https://github.com/user-attachments/assets/8ddefdf3-3621-47e2-b670-93a017836bec</em></p>
+  <p>Now use 
+    <a href="https://ezgif.com/remove-background">ezgif’s remove-background</a> tool to remove black, 
+    and convert to APNG. 
+  </p>
+  <p><em>https://github.com/user-attachments/assets/f895339e-32d2-4d65-8e7e-11c90b33e231</em></p>
+  <p><em>If you have black in your GIF, add a green or purple color under it, then specify custom (HEX) in ezgif 
+    for better background removal.</em>
+  </p>
+
+  <p><strong>Note</strong>: Feel free to suggest additions or modifications by mentioning @kurama0 in the official 
+    <a href="https://discord.gg/dXp2SdxDcP">Decor Discord server</a>.
+  </p>
 </div>
+
 
 
 </body>
