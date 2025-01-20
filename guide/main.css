@@ -101,6 +101,25 @@ header h1 {
   text-decoration: underline;
 }
 
+/* Limit videos inside .faq-extra-text to 600px wide */
+.faq-extra-text video {
+  display: block;       /* so margin: 0 auto works for centering */
+  margin: 1rem auto;    /* center it horizontally, add spacing */
+  max-width: 600px;     /* pick your max width */
+  width: 100%;          /* ensure responsiveness on smaller screens */
+  height: auto;         /* maintain aspect ratio */
+}
+
+/* Similarly, limit large images */
+.faq-extra-text img {
+  display: block;
+  margin: 1rem auto;    
+  max-width: 600px;     
+  width: 100%;          
+  height: auto;
+}
+
+
 
 /* ========== BANNER / CATEGORY ========== */
 .category {
