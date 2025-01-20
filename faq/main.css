@@ -80,14 +80,19 @@ header h1 {
 }
 
 .faq-extra-text {
-  /* Center this entire block horizontally */
-  max-width: 600px;      /* or any width you like */
-  margin: 2rem auto;     /* top/bottom margin; auto left/right for centering */
+  /* Centers the block on the page */
+  max-width: 600px; 
+  margin: 2rem auto; 
+  
+  /* Ensures each line is left-aligned inside the centered block */
+  text-align: left; 
+  line-height: 1.5;    
 
-  /* Inside this block, text is left-aligned. */
-  text-align: left;
-  line-height: 1.5;      /* optional: gives paragraphs a bit more spacing */
-  font-size: 1rem;       /* tweak as needed */
+  /* Make the text bigger */
+  font-size: 1.2rem; /* adjust as needed (e.g., 1.3rem, 1.4rem, etc.) */
+
+  /* (Optional) slightly increase spacing between paragraphs if you like */
+  /* e.g., p { margin-bottom: 1rem; } */
 }
 
 
