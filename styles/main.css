@@ -144,10 +144,9 @@ header h1 {
    But typically gap + padding is enough.
 */
 .decoration-cell {
-  width: 150px;
-  height: 150px;
+  width: 140px;     /* was 150px */
+  height: 140px;    /* was 150px */
   position: relative;
-  /* margin: 0; // can remain 0 unless you want each cell to have margin. */
   background-color: #2b2b2b;
   border-radius: 4px;
   overflow: hidden;
