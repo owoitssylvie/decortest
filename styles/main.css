@@ -187,27 +187,20 @@ header h1 {
 /* Fill ~98% of the cell, leaving a small margin */
 /* The “lighter gray rectangle” is the .decoration-img border */
 .decoration-img {
-  /* Possibly let the ring/cat be smaller than the cell */
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90%;         /* or 95%, etc. */
-  height: auto;
+  top: 0;
+  left: 0;
+  width: 98%;      /* was 96%; increase just a bit */
+  height: 98%;     /* was 96%; match width for a consistent scale */
   object-fit: contain;
-
-  /* We can still give a ring border, if desired, 
-     but it will NOT be the main outer border 
-     that touches the cell edges */
-  border: 2px solid transparent; 
+  border: 2px solid #444;  /* stays the same border if you still want it */
   border-radius: 4px;
   transition: transform 0.2s;
   z-index: 2;
 }
 
 .decoration-cell:hover .decoration-img {
-  /* on hover, slightly zoom from the center */
-  transform: translate(-50%, -50%) scale(1.02);
+  transform: scale(1.02);
 }
 
 
