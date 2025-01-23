@@ -169,7 +169,7 @@ header h1 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 82%;         /* was 80% */
+  width: 84%;         /* was 80% */
   height: auto;
   opacity: 0;
   transition: opacity 0.3s;
