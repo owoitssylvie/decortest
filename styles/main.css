@@ -144,9 +144,10 @@ header h1 {
    But typically gap + padding is enough.
 */
 .decoration-cell {
-  width: 140px;     /* was 150px */
-  height: 140px;    /* was 150px */
+  width: 150px;
+  height: 150px;
   position: relative;
+  /* margin: 0; // can remain 0 unless you want each cell to have margin. */
   background-color: #2b2b2b;
   border-radius: 4px;
   overflow: hidden;
@@ -182,10 +183,11 @@ header h1 {
 */
 .decoration-img {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* centers it in the cell */
+  width: 90%;          /* or 95%, etc. to shrink the ring */
+  height: 90%;         /* keeps a bit of space around the edges */
   object-fit: contain;
   border: 2px solid #444;
   border-radius: 4px;
