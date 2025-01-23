@@ -94,14 +94,15 @@ header h1 {
    ========== DECORATIONS GRID ==========
    Each .decoration-wrap is one decoration + its "download" text.
 */
-.decorations-grid {
-  display: grid;
-  /* Exactly 7 columns, each 150px wide */
-  grid-template-columns: repeat(7, 150px);
-
-  gap: 1rem;
-  padding: 1rem;
-  justify-content: center;
+@media (min-width: 1200px) {
+  .decorations-grid {
+    grid-template-columns: repeat(7, 150px);
+  }
+}
+@media (max-width: 1199px) {
+  .decorations-grid {
+    grid-template-columns: repeat(auto-fit, 150px);
+  }
 }
 
 
