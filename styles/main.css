@@ -96,7 +96,7 @@ header h1 {
 */
 .decorations-grid {
   display: grid;
-  grid-template-columns: repeat(7, 150px);
+  grid-template-columns: repeat(auto-fit, 150px);
 
   /* 1) A small gap between cells */
   gap: 1rem;
@@ -107,6 +107,19 @@ header h1 {
   /* centers columns if there's extra space */
   justify-content: center;
 }
+
+/* Force exactly 7 columns, only if container is wide enough */
+.decorations-grid--seven {
+  grid-template-columns: repeat(7, 150px);
+}
+
+/* On smaller screens (e.g., below 1200px), revert to auto-fit so it doesn’t overflow */
+@media (max-width: 1200px) {
+  .decorations-grid--seven {
+    grid-template-columns: repeat(auto-fit, 150px);
+  }
+}
+
 
 
 /* 
