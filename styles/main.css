@@ -94,15 +94,18 @@ header h1 {
    ========== DECORATIONS GRID ==========
    Each .decoration-wrap is one decoration + its "download" text.
 */
-@media (min-width: 1200px) {
-  .decorations-grid {
-    grid-template-columns: repeat(7, 150px);
-  }
-}
-@media (max-width: 1199px) {
-  .decorations-grid {
-    grid-template-columns: repeat(auto-fit, 150px);
-  }
+.decorations-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 150px);
+
+  /* 1) A small gap between cells */
+  gap: 1rem;
+
+  /* 2) Some padding to push the grid away from the banner */
+  padding: 1rem;
+
+  /* centers columns if there's extra space */
+  justify-content: center;
 }
 
 
