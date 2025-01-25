@@ -1487,5 +1487,18 @@
 
   <!-- ====== SCRIPTS ====== -->
   <script src="scripts/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Grab every <img> in the document
+      const allImages = document.querySelectorAll('img');
+  
+      allImages.forEach(img => {
+        // Only set loading="lazy" if the <img> doesn’t already have a loading attribute
+        if (!img.hasAttribute('loading')) {
+          img.setAttribute('loading', 'lazy');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
