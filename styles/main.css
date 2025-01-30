@@ -83,11 +83,18 @@ header h1 {
 */
 .category-banner img {
   display: block;
-  max-width: 1000px; /* e.g., 1000px or 80vw, etc. */
+  max-width: 1000px; /* remains the same on large screens */
   width: 100%;
   height: auto;
   object-fit: cover;
   margin: 0 auto;
+}
+
+/* On screens below 600px (for example), reduce the banner size */
+@media (max-width: 600px) {
+  .category-banner img {
+    max-width: 90vw; /* scale it down a bit for mobile */
+  }
 }
 
 /* 
