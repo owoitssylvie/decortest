@@ -78,6 +78,12 @@ header h1 {
   color: #fff;         /* optional, if you want to ensure it’s white */
 }
 
+/* NEW OVERRIDE FOR LINKS INSIDE .nav-image-text */
+.nav-image-text a {
+  color: rgb(63, 72, 239);        /* bright blue */
+  text-decoration: underline;
+}
+
 
 /* ========== BANNER / CATEGORY ========== */
 .category {
