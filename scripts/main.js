@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Existing code for your decoration downloads
+  // 1) Existing code for decoration downloads
   const decorationCells = document.querySelectorAll('.decoration-cell');
   decorationCells.forEach(cell => {
     cell.addEventListener('click', () => {
@@ -13,32 +13,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Confetti logic
+  // 2) Confetti logic
   const container = document.querySelector('.confetti-container');
   if (!container) return;
 
-  // 1) Fewer pieces => sparser confetti
-  const confettiCount = 10;
-
+  const confettiCount = 15; // e.g. 15 pieces
   for (let i = 0; i < confettiCount; i++) {
     const confetti = document.createElement('img');
-    confetti.src = 'styles/jelly-confetti.png';
+    confetti.src = 'styles/jelly-confetti.png'; 
     confetti.classList.add('confetti-piece');
 
-    // 2) Larger size range: 50–80px
-    const size = Math.floor(Math.random() * 30) + 50;
+    // Random pick: either "CW" or "CCW" animation
+    const animationName = Math.random() < 0.5 ? 'confettiDriftCW' : 'confettiDriftCCW';
+    confetti.style.animationName = animationName;
+
+    // Random size
+    const size = Math.floor(Math.random() * 20) + 30; 
     confetti.style.width = `${size}px`;
     confetti.style.height = `${size}px`;
 
-    // Random left start (0–100%)
+    // Position
     confetti.style.left = `${Math.random() * 100}%`;
     confetti.style.top = '-50px';
 
-    // Slight random delay
-    const delay = Math.random() * 5;
+    // Random delay
+    const delay = Math.random() * 3;  // 0–3s
     confetti.style.animationDelay = `${delay}s`;
 
-    // Slower drifting: 10–20s
+    // Random fall duration => slower means bigger number
     const duration = 10 + Math.random() * 10;
     confetti.style.animationDuration = `${duration}s`;
 
