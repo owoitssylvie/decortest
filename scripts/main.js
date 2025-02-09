@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // 1) Existing code for decoration downloads
+  /********************************
+   * 1) EXISTING DECORATION DOWNLOAD LOGIC
+   ********************************/
   const decorationCells = document.querySelectorAll('.decoration-cell');
   decorationCells.forEach(cell => {
     cell.addEventListener('click', () => {
@@ -13,37 +15,53 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 2) Confetti logic
+  /********************************
+   * 2) CONFETTI SPAWN LOGIC
+   ********************************/
   const container = document.querySelector('.confetti-container');
-  if (!container) return;
+  if (!container) return; // If there's no .confetti-container in the HTML, stop.
 
-  const confettiCount = 15; // e.g. 15 pieces
-  for (let i = 0; i < confettiCount; i++) {
+  /**
+   * Spawns a single confetti piece at the top, drifting downward once.
+   * Removes itself from DOM on animation end.
+   */
+  function spawnConfettiPiece() {
+    // Create the <img> for the confetti
     const confetti = document.createElement('img');
-    confetti.src = 'styles/jelly-confetti.png'; 
+    confetti.src = 'styles/jelly-confetti.png';  // Adjust path if needed
     confetti.classList.add('confetti-piece');
 
-    // Random pick: either "CW" or "CCW" animation
-    const animationName = Math.random() < 0.5 ? 'confettiDriftCW' : 'confettiDriftCCW';
-    confetti.style.animationName = animationName;
-
-    // Random size
-    const size = Math.floor(Math.random() * 20) + 30; 
+    // Random size (e.g., 30–50px)
+    const size = Math.floor(Math.random() * 20) + 30;
     confetti.style.width = `${size}px`;
     confetti.style.height = `${size}px`;
 
-    // Position
+    // Random horizontal start (0–100%)
     confetti.style.left = `${Math.random() * 100}%`;
+
+    // Start slightly above the top
     confetti.style.top = '-50px';
 
-    // Random delay
-    const delay = Math.random() * 3;  // 0–3s
-    confetti.style.animationDelay = `${delay}s`;
+    // OPTIONAL: small random delay so they don't all appear at once
+    const smallDelay = Math.random() * 0.5; // 0–0.5s
+    confetti.style.animationDelay = `${smallDelay}s`;
 
-    // Random fall duration => slower means bigger number
+    // Random fall duration => e.g., 10–20s
     const duration = 10 + Math.random() * 10;
     confetti.style.animationDuration = `${duration}s`;
 
+    // Remove from DOM when animation finishes
+    confetti.addEventListener('animationend', () => {
+      container.removeChild(confetti);
+    });
+
     container.appendChild(confetti);
   }
+
+  // Spawn 1 piece of confetti every 1000 ms (1 second)
+  setInterval(() => {
+    spawnConfettiPiece();
+    // If you want multiple pieces per interval, do:
+    // for (let i = 0; i < 2; i++) spawnConfettiPiece();
+  }, 1000);
 });
