@@ -85,6 +85,40 @@ header h1 {
   text-decoration: underline;
 }
 
+/* 1) The container spans the whole screen, behind everything. */
+.confetti-container {
+  position: fixed;     /* stay in place while scrolling */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* so clicks pass through to normal content */
+  z-index: 0;           /* lower or negative if you need it behind all elements */
+  overflow: hidden;     /* confetti won't scroll off, just disappear at edges */
+}
+
+/* 2) Each confetti piece is absolutely positioned inside the container */
+.confetti-piece {
+  position: absolute;
+  display: block;
+  opacity: 0.8;         /* slightly transparent */
+  animation-name: confettiFall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* 3) The confetti “falling” keyframes 
+   Adjust to create swirl/spin or simply let them drop. */
+@keyframes confettiFall {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+  }
+  100% {
+    transform: translateY(110vh) rotate(720deg);
+  }
+}
+
+
 
 /* ========== BANNER / CATEGORY ========== */
 .category {
