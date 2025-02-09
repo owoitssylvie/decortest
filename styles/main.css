@@ -87,14 +87,14 @@ header h1 {
 
 /* 1) The container spans the whole screen, behind everything. */
 .confetti-container {
-  position: fixed;     /* stay in place while scrolling */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  pointer-events: none; /* so clicks pass through to normal content */
-  z-index: 0;           /* lower or negative if you need it behind all elements */
-  overflow: hidden;     /* confetti won't scroll off, just disappear at edges */
+  pointer-events: none;
+  z-index: -1;       /* Move behind everything */
+  overflow: hidden;
 }
 
 /* 2) Each confetti piece is absolutely positioned inside the container */
