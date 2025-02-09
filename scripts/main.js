@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
    ********************************/
   function spawnConfettiPiece(container) {
     const confetti = document.createElement('img');
-    // Point this to your actual jelly-confetti image
+    // Use your heart confetti image
     confetti.src = 'styles/heart-confetti.png';
     confetti.classList.add('confetti-piece');
 
@@ -34,13 +34,19 @@ document.addEventListener('DOMContentLoaded', () => {
     confetti.style.left = `${Math.random() * 100}%`;
     confetti.style.top = '-50px';  // just above the viewport
 
-    // Minimal random delay (0–0.5s) => starts quickly
+    // Minimal random delay (0–0.5s)
     const smallDelay = Math.random() * 0.5; 
     confetti.style.animationDelay = `${smallDelay}s`;
 
-    // Random duration => e.g. 10–20s for a slow drift
+    // Random duration => e.g. 10–20s
     const duration = 10 + Math.random() * 10;
     confetti.style.animationDuration = `${duration}s`;
+
+    // RANDOM: either clockwise or counterclockwise
+    const animationName = Math.random() < 0.5 
+      ? 'confettiDriftCW' 
+      : 'confettiDriftCCW';
+    confetti.style.animationName = animationName;
 
     // Remove from DOM after animation completes
     confetti.addEventListener('animationend', () => {
@@ -56,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const container = document.querySelector('.confetti-container');
   if (!container) return;
 
-  // Optionally spawn a few pieces immediately on load
+  // Optionally spawn a few pieces right away
   for (let i = 0; i < 5; i++) {
     spawnConfettiPiece(container);
   }
@@ -64,5 +70,4 @@ document.addEventListener('DOMContentLoaded', () => {
   // Then spawn a new piece every 1 second
   setInterval(() => {
     spawnConfettiPiece(container);
-  }, 1000);
-});
+  }
