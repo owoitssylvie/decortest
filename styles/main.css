@@ -87,41 +87,39 @@ header h1 {
 
 .confetti-container {
   position: fixed;
-  top: 0; 
+  top: 0;
   left: 0;
-  width: 100vw; 
+  width: 100vw;
   height: 100vh;
-  pointer-events: none; /* clicks pass through */
-  z-index: -1;          /* behind site content */
+  pointer-events: none;
+  z-index: -1;      /* behind page content */
   overflow: hidden;
 }
 
-/* The confetti piece itself */
 .confetti-piece {
   position: absolute;
   display: block;
-  opacity: 0.8;
-
-  /* Use our new "confettiDrift" keyframes instead of "confettiFall" */
-  animation-name: confettiDrift;
+  /* 3) More translucent */
+  opacity: 0.3;
+  
+  animation-name: confettiDrift;    /* or however you named it */
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
 
-/* Subtle drift keyframes */
+/* Example drifting keyframes */
 @keyframes confettiDrift {
   0% {
     transform: translateY(-10vh) rotate(0deg);
   }
   50% {
-    /* half-way: drift a bit left or right */
     transform: translateY(50vh) translateX(5vw) rotate(90deg);
   }
   100% {
-    /* end: well below the screen, maybe shift back the other way */
     transform: translateY(120vh) translateX(-5vw) rotate(180deg);
   }
 }
+
 
 
 
