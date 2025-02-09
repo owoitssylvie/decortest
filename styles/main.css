@@ -104,10 +104,28 @@ header h1 {
   animation-iteration-count: 1;  /* single pass */
 }
 
-@keyframes confettiDrift {
-  0%   { transform: translateY(-10vh) rotate(0deg); }
-  50%  { transform: translateY(50vh)  translateX(5vw) rotate(90deg); }
-  100% { transform: translateY(120vh) translateX(-5vw) rotate(180deg); }
+@keyframes confettiDriftCW {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+  }
+  50% {
+    transform: translateY(50vh) translateX(5vw) rotate(90deg);
+  }
+  100% {
+    transform: translateY(120vh) translateX(-5vw) rotate(180deg);
+  }
+}
+
+@keyframes confettiDriftCCW {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+  }
+  50% {
+    transform: translateY(50vh) translateX(5vw) rotate(-90deg);
+  }
+  100% {
+    transform: translateY(120vh) translateX(-5vw) rotate(-180deg);
+  }
 }
 
 
