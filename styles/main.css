@@ -85,48 +85,51 @@ header h1 {
   text-decoration: underline;
 }
 
-/* The container */
+/********************************
+ * Confetti Background Container
+ ********************************/
 .confetti-container {
   position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  pointer-events: none;
-  z-index: -1;      /* behind site content */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* clicks pass through to content */
+  z-index: -1;          /* behind your site content */
   overflow: hidden;
 }
 
+/********************************
+ * Confetti Piece
+ ********************************/
 .confetti-piece {
   position: absolute;
   display: block;
-  opacity: 0.4;                /* more translucent */
+  opacity: 0.4;            /* more transparent, can tweak */
+  animation-name: confettiDrift;
   animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  animation-iteration-count: 1; /* only drift once */
+  pointer-events: none; 
 }
 
-/* Two different animations: one clockwise (CW), one counterclockwise (CCW) */
-@keyframes confettiDriftCW {
+/********************************
+ * Keyframes: Subtle Drift
+ ********************************/
+@keyframes confettiDrift {
   0% {
+    /* Just above viewport, no rotation yet */
     transform: translateY(-10vh) rotate(0deg);
   }
   50% {
+    /* halfway: shift a bit horizontally, partial rotation */
     transform: translateY(50vh) translateX(5vw) rotate(90deg);
   }
   100% {
+    /* end well below viewport, final rotation */
     transform: translateY(120vh) translateX(-5vw) rotate(180deg);
   }
 }
 
-@keyframes confettiDriftCCW {
-  0% {
-    transform: translateY(-10vh) rotate(0deg);
-  }
-  50% {
-    transform: translateY(50vh) translateX(-5vw) rotate(-90deg);
-  }
-  100% {
-    transform: translateY(120vh) translateX(5vw) rotate(-180deg);
-  }
-}
 
 
 /* ========== BANNER / CATEGORY ========== */
