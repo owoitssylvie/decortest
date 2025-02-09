@@ -86,52 +86,30 @@ header h1 {
 }
 
 
-/* Confetti container behind everything */
 .confetti-container {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
   pointer-events: none;
-  z-index: -1;  /* ensures it's behind your site content */
+  z-index: -1;   /* behind the page content */
   overflow: hidden;
 }
 
-/* Each confetti piece */
 .confetti-piece {
   position: absolute;
   display: block;
-  opacity: 0.4; /* adjust as you like */
+  opacity: 0.4;
+  animation-name: confettiDrift;
   animation-timing-function: linear;
-  animation-iteration-count: 1;  /* single pass from top to bottom */
+  animation-iteration-count: 1;  /* single pass */
 }
 
-/* Clockwise drift keyframes */
-@keyframes confettiDriftCW {
-  0% {
-    transform: translateY(-10vh) rotate(0deg);
-  }
-  50% {
-    transform: translateY(50vh) translateX(5vw) rotate(90deg);
-  }
-  100% {
-    transform: translateY(120vh) translateX(-5vw) rotate(180deg);
-  }
+@keyframes confettiDrift {
+  0%   { transform: translateY(-10vh) rotate(0deg); }
+  50%  { transform: translateY(50vh)  translateX(5vw) rotate(90deg); }
+  100% { transform: translateY(120vh) translateX(-5vw) rotate(180deg); }
 }
 
-/* Counterclockwise drift keyframes */
-@keyframes confettiDriftCCW {
-  0% {
-    transform: translateY(-10vh) rotate(0deg);
-  }
-  50% {
-    transform: translateY(50vh) translateX(-5vw) rotate(-90deg);
-  }
-  100% {
-    transform: translateY(120vh) translateX(5vw) rotate(-180deg);
-  }
-}
 
 
 /* ========== BANNER / CATEGORY ========== */
