@@ -25,6 +25,10 @@ document.addEventListener('DOMContentLoaded', () => {
     confetti.src = 'styles/heart-confetti.png';
     confetti.classList.add('confetti-piece');
 
+    // Random pick: either "CW" or "CCW" animation
+    const animationName = Math.random() < 0.5 ? 'confettiDriftCW' : 'confettiDriftCCW';
+    confetti.style.animationName = animationName;
+
     // Random size: e.g. 30–50px
     const size = Math.floor(Math.random() * 20) + 30;
     confetti.style.width = `${size}px`;
