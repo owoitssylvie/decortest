@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   /********************************
-   * 1) DECORATION DOWNLOAD LOGIC
+   * 1) EXISTING DECORATION DOWNLOAD LOGIC
    ********************************/
   const decorationCells = document.querySelectorAll('.decoration-cell');
   
@@ -21,34 +21,28 @@ document.addEventListener('DOMContentLoaded', () => {
    ********************************/
   function spawnConfettiPiece(container) {
     const confetti = document.createElement('img');
-    // Use your heart confetti image (adjust path if needed)
+    // Point this to your actual jelly-confetti image
     confetti.src = 'styles/heart-confetti.png';
     confetti.classList.add('confetti-piece');
 
-    // Random size => 30–50px
+    // Random size: e.g. 30–50px
     const size = Math.floor(Math.random() * 20) + 30;
     confetti.style.width = `${size}px`;
     confetti.style.height = `${size}px`;
 
-    // Random horizontal start
+    // Random horizontal start (0–100%)
     confetti.style.left = `${Math.random() * 100}%`;
-    confetti.style.top = '-50px'; // start above viewport
+    confetti.style.top = '-50px';  // just above the viewport
 
-    // Minimal random delay => 0–0.5s
-    const smallDelay = Math.random() * 0.5;
+    // Minimal random delay (0–0.5s) => starts quickly
+    const smallDelay = Math.random() * 0.5; 
     confetti.style.animationDelay = `${smallDelay}s`;
 
-    // Random duration => 10–20s
+    // Random duration => e.g. 10–20s for a slow drift
     const duration = 10 + Math.random() * 10;
     confetti.style.animationDuration = `${duration}s`;
 
-    // Randomly pick CW or CCW animation
-    const animationName = Math.random() < 0.5
-      ? 'confettiDriftCW'
-      : 'confettiDriftCCW';
-    confetti.style.animationName = animationName;
-
-    // Remove piece after animation completes
+    // Remove from DOM after animation completes
     confetti.addEventListener('animationend', () => {
       container.removeChild(confetti);
     });
@@ -57,17 +51,17 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /********************************
-   * 3) CONTINUOUS SPAWN
+   * 3) CONFETTI: CONTINUOUS SPAWN
    ********************************/
   const container = document.querySelector('.confetti-container');
   if (!container) return;
 
-  // Immediately spawn a few
+  // Optionally spawn a few pieces immediately on load
   for (let i = 0; i < 5; i++) {
     spawnConfettiPiece(container);
   }
 
-  // Spawn a new piece every second
+  // Then spawn a new piece every 1 second
   setInterval(() => {
     spawnConfettiPiece(container);
   }, 1000);
